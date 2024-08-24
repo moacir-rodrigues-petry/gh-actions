@@ -7,3 +7,11 @@ jobs:
     steps:
       - run: echo "Running the command exit 1 to force a failure..."
       - run: exit 1
+      - run: echo "Because the job failed before and we're not using the continue-on-error command, it wasn't executed!"
+  Job2-Continues-On-Failure:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - run: echo "Running even with failures..."
+      - run: exit 1
+      - run: echo "The job was done even with failures..."
