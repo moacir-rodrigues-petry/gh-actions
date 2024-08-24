@@ -1,0 +1,22 @@
+name: Set a job dependency 🔗
+run-name: Job2 depends on Job1 🚀
+on: [push]
+jobs:
+  Jobs-Dependencies-Job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Current Date and Time"; /bin/date
+      - run: echo "🏗️ This Job1 is a dependency for Job2"
+      - run: echo "We're going to sleep for a few seconds to show the job difference in time..."
+      - run: /bin/sleep 2
+      - name: List files in the repository - Include directory entries whose names begin with a dot (‘.’)
+        run: |
+          ls -la ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+  Jobs-Dependencies-Job2:
+    runs-on: ubuntu-latest
+    needs: Jobs-Dependencies-Job1
+    steps:
+      - run: echo "Current Date and Time after Job1 completed"; /bin/date
+      - run: echo "⚠️ This Job2 has the Date and Time Major than Job1, proving the dependency ran after it."
+      - run: echo "Jobs run in parallel by default. To run jobs sequentially use the needs keyword."
