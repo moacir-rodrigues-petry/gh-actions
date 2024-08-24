@@ -2,12 +2,13 @@ name: Force a failure ⛔
 run-name: Job failure 👎🏼
 on: [push]
 jobs:
-  Job-Failure:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Running the command exit 1 to force a failure..."
-      - run: exit 1
-      - run: echo "Because the job failed before and we're not using the continue-on-error command, it wasn't executed!"
+  # Why this job was created? Because if in some moment is needed to raise an error to test something.
+  # Job-Failure:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - run: echo "Running the command exit 1 to force a failure..."
+  #     - run: exit 1
+  #     - run: echo "Because the job failed before and we're not using the continue-on-error command, it wasn't executed!"
   Continue-On-Error:
     runs-on: ubuntu-latest
     steps:
