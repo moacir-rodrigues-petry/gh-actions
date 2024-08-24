@@ -1,0 +1,9 @@
+name: Force a failure ⛔
+run-name: Job failure 👎🏼
+on: [push]
+jobs:
+  Job-Failure:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running the command exit 1 to force a failure..."
+      - run: exit 1
