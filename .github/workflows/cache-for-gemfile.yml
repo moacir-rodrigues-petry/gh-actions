@@ -1,0 +1,15 @@
+name: Gemfile using just the Puma Web Server 💎
+run-name: Proving Cache
+on: [push]
+jobs:
+  Install-Puma-Server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@78c01b705fd9d5ad960d432d3a0cfa341d50e410 # v1.179.1
+        with:
+          bundler-cache: true
+      - name: Install Gems
+        run: bundle install
