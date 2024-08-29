@@ -15,6 +15,12 @@ This Repo intend to have some useful references for use the GH Actions.
 > [!IMPORTANT]
 > Key information users need to know to achieve their goal.
 
-## Section
+## TruffleHog
 
-Place to be add more content in the future.
+Running locally
+
+`trufflehog filesystem /tmp`
+
+Against a GitHub repository
+
+`trufflehog github --repo=https://github.com/moacir-rodrigues-petry/gh-actions`
