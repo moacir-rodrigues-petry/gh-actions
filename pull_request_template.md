@@ -9,7 +9,7 @@ This PR has been released to...
 - [ ] Documentation
 - [ ] Minor Update
 
-## Please check if the PR fulfills these requirements\*\*
+## Please check if the PR fulfills these requirements
 
 - [ ] 📜 The commit message follows our guidelines
 - [ ] 🧪 Tests for the changes have been added (for bug fixes/features)
