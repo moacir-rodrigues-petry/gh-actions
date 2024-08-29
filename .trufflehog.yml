@@ -1,0 +1,17 @@
+rules:
+  - description: "Detect AWS Access Keys"
+    regex: "(?i)aws_access_key_id\\s*=\\s*['\"]?AKIA[0-9A-Z]{16}"
+    tags:
+      - aws
+      - key
+
+  - description: "Detect AWS Secret Keys"
+    regex: "(?i)aws_secret_access_key\\s*=\\s*['\"]?[a-zA-Z0-9/+=]{40}"
+    tags:
+      - aws
+      - key
+
+  - description: "Detect Plain Text Passwords"
+    regex: "(?i)password\\s*=\\s*['\"]?.+['\"]?"
+    tags:
+      - password
