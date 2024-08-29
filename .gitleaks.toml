@@ -1,0 +1,4 @@
+[[rules]]
+description = "Detects AWS secret keys"
+regex = '''(?i)aws_secret_access_key\s*=\s*["']?[A-Za-z0-9/+=]{40}'''
+tags = ["aws"]
